@@ -1,0 +1,21 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.app__main {
+  @include desktop {
+    display: flex;
+  }
+}
+.main__content {
+  @include desktop {
+    flex-grow: 1;
+    padding-left: 7.5rem;
+  }
+}
+
+.next__videos {
+  @include desktop {
+    float: right;
+  }
+}

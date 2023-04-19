@@ -1,0 +1,189 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.upload-main {
+  display: flex;
+  flex-direction: column;
+  font-family: $font;
+  padding: 0.3125rem;
+}
+
+.upload-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 0.625rem;
+  padding-left: 0.1875rem;
+  @include tablet {
+    border-bottom: 1px solid $mercurycolor;
+    font-size: 1.875rem;
+    padding-bottom: 1.25rem;
+  }
+  @include desktop {
+    margin-right: 4.375rem;
+    margin-left: 4.375rem;
+  }
+}
+.upload-thumbnail-title {
+  color: $brainflix-silver;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.1875rem;
+}
+.upload-img-thumbnail {
+  width: 100%;
+  border-radius: 0.625rem;
+  @include tablet {
+    width: 40%;
+  }
+  @include desktop {
+    position: relative;
+    margin-right: -5rem;
+    width: 35%;
+    height: 17vh;
+    padding-top: 2.5rem;
+    right: 7.8125rem;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  color: $brainflix-silver;
+  font-family: $font;
+}
+
+.video-description-text-box {
+  resize: none;
+  border: 1px solid $mercurycolor;
+  background-color: $alabaster-white;
+  border-radius: 0.25rem;
+  width: 100%;
+  height: 8vh;
+  @include desktop {
+    width: 360%;
+  }
+}
+
+.video-title-text-box {
+  resize: none;
+  border: 1px solid $mercurycolor;
+  background-color: $alabaster-white;
+  border-radius: 0.25rem;
+  width: 100%;
+  height: 3.2vh;
+  margin-bottom: 1.875rem;
+  @include desktop {
+    margin-bottom: 1.875rem;
+    width: 360%;
+    height: 3.5vh;
+  }
+}
+.form-title-area {
+  padding-bottom: 0.3125rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.form-description-area {
+  padding-bottom: 0.625rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.form-main-area {
+  font-size: 0.75rem;
+  padding: 0.3125rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  @include tablet {
+    border-bottom: 1px solid $mercurycolor;
+  }
+  @include desktop {
+    border-bottom: none;
+  }
+}
+
+.cancel-button {
+  background-color: white;
+  border: transparent;
+  color: $brainflix-blue;
+  background-size: 1.25rem;
+  background-repeat: no-repeat;
+  border-radius: 0.625rem;
+  width: 100%;
+  height: 3.5vh;
+  font-size: 1rem;
+  font-weight: 700;
+  position: relative;
+  background-position: 1rem;
+  @include tablet {
+    width: 20%;
+  }
+}
+
+.submit-button {
+  background-color: $brainflix-blue;
+  border: transparent;
+  color: white;
+  background-image: url("../../assets/icons/publish.svg");
+  background-size: 1.25rem;
+  background-repeat: no-repeat;
+  border-radius: 7px;
+  width: 90vw;
+  height: 3.5vh;
+  font-size: 1rem;
+  font-weight: 700;
+  position: relative;
+  background-position: 1rem;
+
+  @include tablet {
+    width: 20vw;
+    padding-left: 1.25rem;
+  }
+  @include desktop {
+    width: 12vw;
+    padding-left: 1.25rem;
+  }
+}
+.submit-button:hover {
+  background-color: $brainflix-darkblue;
+}
+textarea {
+  text-align: left;
+  vertical-align: top;
+  resize: none;
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+  font-family: $font;
+  color: $brainflix-black;
+}
+textarea::placeholder {
+  color: $brainflix-black;
+  padding: 0.625rem;
+}
+textarea:focus {
+  outline: none;
+  border-color: $brainflix-blue;
+}
+.button-area {
+  @include tablet {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 1.25rem;
+  }
+  @include desktop {
+    margin-right: 4.375rem;
+  }
+}
+
+.desktop-view-div {
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 4.375rem;
+    margin-right: 4.375rem;
+    padding-bottom: 3.125rem;
+    border-bottom: 1px solid $mercurycolor;
+  }
+}

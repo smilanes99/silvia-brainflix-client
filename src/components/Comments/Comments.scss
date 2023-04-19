@@ -1,0 +1,55 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.comments {
+  font-family: $font;
+}
+.comment {
+  display: flex;
+  border-bottom: 1px solid $mercurycolor;
+  margin: 0.3125rem;
+  font-size: 0.8125rem;
+  align-items: baseline;
+  font-family: $font;
+  @include tablet {
+    margin: 1.25rem;
+  }
+  @include desktop {
+    margin: 0px;
+  }
+}
+
+.comment__data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0.3125rem;
+  position: relative;
+  top: -1.25rem;
+  @include desktop {
+    margin-right: 3.125rem;
+  }
+}
+
+.comment__text {
+  margin: 0.3125rem;
+  margin-left: 0;
+  @include tablet {
+    font-size: 0.9375rem;
+    margin-top: -0.3125rem;
+    margin-left: 0;
+  }
+}
+.comment__date {
+  display: flex;
+  margin-left: auto;
+  font-weight: 400;
+  color: $brainflix-silver;
+}
+.comment__name {
+  font-weight: 600;
+  @include tablet {
+    margin-bottom: 0px;
+  }
+}

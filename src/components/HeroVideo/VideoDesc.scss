@@ -1,0 +1,89 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+main {
+  font-family: $font;
+  margin-left: -0.625rem;
+  margin-right: -0.625rem;
+}
+
+
+.video-title-hero {
+  border-bottom: 1px solid $mercurycolor;
+  padding: 0.9375rem;
+  width: 80%;
+  margin-left: 0.625rem;
+  color: $brainflix-black;
+  @include tablet {
+    border-bottom: none;
+    padding: 0.625rem;
+    margin: 0.3125rem;
+  }
+  @include desktop {
+    padding-left: 0.125rem;
+  }
+}
+
+.video-details-hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-bottom: 1px solid $mercurycolor;
+  margin: 0.625rem;
+  padding-left: 0.9375rem;
+  font-weight: 300;
+  @include tablet {
+    margin-top: -1.25rem;
+    padding-left: 0.3125rem;
+  }
+  @include desktop {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    margin: 0;
+  }
+}
+
+.date-string {
+  padding-right: 0.625rem;
+  color: $brainflix-silver;
+  font-weight: 300;
+  @include tablet {
+    margin-left: 1.25rem;
+  }
+}
+.views {
+  padding-left: 1.6875rem;
+  color: $brainflix-silver;
+  font-weight: 300;
+}
+.likes {
+  padding-left: 1.6875rem;
+  color: $brainflix-silver;
+  font-weight: 300;
+}
+
+.description h3 {
+  padding: 0.9375rem;
+  color: $brainflix-black;
+  font-weight: 200;
+  @include desktop {padding-left: 5px;}
+}
+.channel {
+  color: $brainflix-black;
+  font-weight: 700;
+}
+.channel-date {
+  @include tablet {
+    display: flex;
+  }
+}
+.views-likes {
+  font-size: 1rem;
+  @include tablet {
+    display: flex;
+    margin-left: 12.5rem;
+  }
+}
+
+
