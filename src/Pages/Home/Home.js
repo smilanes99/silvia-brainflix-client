@@ -10,8 +10,8 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 
-const API_URL = "https://project-2-api.herokuapp.com/";
-const API_KEY = "/?api_key=c57957ca-0863-41d1-a9e7-9450b026b2e7";
+const API_URL = "http://localhost:8080/";
+// const API_KEY = "/?api_key=c57957ca-0863-41d1-a9e7-9450b026b2e7";
 
 function Home() {
   const [videos, setVideos] = useState([]);
@@ -20,7 +20,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}videos/${videoId}${API_KEY}`)
+      .get(`${API_URL}videos/${videoId}`)
       .then((response) => {
         setSelectedVideo(response.data);
       })
@@ -32,12 +32,12 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}videos${API_KEY}`)
+      .get(`${API_URL}videos`)
       .then((response) => {
         setVideos(response.data);
         const firstVideo = response.data[0];
         axios
-          .get(`${API_URL}videos/${firstVideo.id}${API_KEY}`)
+          .get(`${API_URL}videos/${firstVideo.id}`)
           .then((response) => {
             setSelectedVideo(response.data);
           })
@@ -49,6 +49,18 @@ function Home() {
         console.error(error);
       });
   }, []);
+  useEffect(() => {
+    if (videoId) {
+      axios
+        .get(`${API_URL}videos/${videoId}`)
+        .then((response) => {
+          setSelectedVideo(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, [videoId]);
 
   return (
     <div className="App">

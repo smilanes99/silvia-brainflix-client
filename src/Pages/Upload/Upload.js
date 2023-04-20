@@ -1,18 +1,52 @@
+import axios from 'axios';
 import './Upload.scss';
 import image from '../../assets/images/Upload-video-preview.jpg'
 import {useState } from 'react';
+const { v4: uuidv4 } = require('uuid');
+
 
 
 
 function Upload() {
-  
+
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const handlePublish = () => {
-    setIsSubmitted(true);
-    window.alert('Your video has been uploaded successfully!');
-    window.location.href = '/';
-    
+  const handlePublish = () => {setIsSubmitted(true);
+  const title = document.getElementById('video-title').value;
+  const description = document.getElementById('video-description').value;
+  const videoUrl = '';
+ 
+  const newVideo = {
+    id: uuidv4(), // Generate a unique ID using a library like uuid
+    title,
+    channel: 'Your Channel Name',
+    image: 'https://i.imgur.com/l2Xfgpl.jpg', // Replace with the URL of the video thumbnail
+    description,
+    views: '0',
+    likes: '0',
+    duration: '0:00', // Replace with the actual duration of the uploaded video
+    video: videoUrl,
+    timestamp: Date.now(),
+    comments: []
   };
+
+    axios.post('http://localhost:8080', newVideo)
+      .then(response => {
+        console.log('Video uploaded:', response.data);
+        window.alert('Your video has been uploaded successfully!');
+        window.location.href = '/';
+      })
+      .catch(error => {
+        console.error('Error uploading video:', error);
+      });
+  };
+
+
+  // const handlePublish = () => {
+  //   setIsSubmitted(true);
+  //   window.alert('Your video has been uploaded successfully!');
+  //   window.location.href = '/';
+    
+  // };
 
   return (
     <>
