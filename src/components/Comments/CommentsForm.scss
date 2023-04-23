@@ -32,9 +32,7 @@
   border-radius: 50%;
   margin-top: 0.3125rem;
   margin-left: 0.3125rem;
-  @include tablet {
-    margin-top: 0.9375rem;
-  }
+  
   @include tablet {
     margin-left: 0;
   }
@@ -61,7 +59,7 @@
   @include desktop {
     height: 3.5vh;
     width: 35vw;
-    margin-left: 15px;
+    margin-left: .9375rem;
   }
 }
 .comments-form__comment-box:focus {
@@ -83,7 +81,7 @@ input::placeholder {
     margin-bottom: 0;
   }
   @include desktop {
-    margin-left: 15px;
+    margin-left: .9375rem;
   }
 }
 .comments-form__total {
@@ -111,6 +109,8 @@ input::placeholder {
     width: 10rem;
     background-position: 0.5rem;
     padding-left: 1.25rem;
+    font-weight: 500;
+    font-size: 12px;
   }
 }
 

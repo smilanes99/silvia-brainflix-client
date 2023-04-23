@@ -2,7 +2,8 @@ import './NextVideos.scss';
 import { Link } from 'react-router-dom';
 
 
-function NextVideos({ videos }) {
+function NextVideos({ videos, selectedVideoId }) {
+  const filteredVideos = videos.filter((video) => video.id !== selectedVideoId).slice(1);
 
 
   return (
@@ -10,7 +11,7 @@ function NextVideos({ videos }) {
 
       <h4 className='next-videos'>NEXT VIDEOS</h4>
       <div className="video-recap">
-        {videos.map((video) => (
+      {filteredVideos.map((video) => (
           <Link key={video.id} className="video_link" to={`/video/${video.id}`}>
             <div className="video-container">
               <div className='video-img'>
