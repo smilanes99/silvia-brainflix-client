@@ -25,7 +25,7 @@ function Upload() {
     video: videoUrl,
     likes: 1000,
     views: 900,
-    date: date.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }),
+    timestamp: date.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }),
     comments: []
   };
 
